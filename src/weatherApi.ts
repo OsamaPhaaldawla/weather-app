@@ -3,6 +3,7 @@ import type { ForecastResponse, GeocodingResponse, GeocodingResult } from "./typ
 export async function searchCity(
   name: string,
 ): Promise<GeocodingResult> {
+  // await new Promise((resolve) => setTimeout(resolve, name.length < 5 ? 3000 : 0));
   const response = await fetch(
     `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=1`,
   );
